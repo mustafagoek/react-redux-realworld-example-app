@@ -13,18 +13,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-#     - uses: actions/checkout@v3
-#     - name: Build the Docker image
-#       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: checkout my code
+      uses: actions/checkout@v3
+    
+
     - name: Login to ACR
       uses: docker/login-action@v2
       with:
           registry: gokmusacr.azurecr.io
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
-#     -
-#       name: Build and push
-#       uses: docker/build-push-action@v4
-#       with:
-#         push: true
-#         tags: user/app:latest
+    -
+      name: Build and push
+      uses: docker/build-push-action@v4
+      with:
+        push: true
+        tags: redax/app:latest
