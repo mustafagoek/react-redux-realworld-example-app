@@ -35,6 +35,7 @@ jobs:
     steps :
        - uses: azure/webapps-deploy@v2
           with:
-            app-name: 'node-rnc'
+            app-name: 'webappmgok'
             publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-            images: 'contoso.azurecr.io/nodejssampleapp:${{ github.sha }}'
+            images : 'gokmusacr.azurecr.io/redax/app:latest'
+            #images: 'contoso.azurecr.io/nodejssampleapp:${{ github.sha }}'
