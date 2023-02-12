@@ -28,4 +28,4 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         push: true
-        tags: redax/app:latest
+        tags: gokmusacr.azurecr.io/redax/app:latest
