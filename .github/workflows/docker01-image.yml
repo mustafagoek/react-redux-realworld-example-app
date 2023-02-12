@@ -29,3 +29,12 @@ jobs:
       with:
         push: true
         tags: gokmusacr.azurecr.io/redax/app:latest
+        
+  deploy : 
+    runs-on: ubuntu-latest
+    steps :
+       - uses: azure/webapps-deploy@v2
+          with:
+            app-name: 'node-rnc'
+            publish-profile: ${{ secrets.azureWebAppPublishProfile }}
+            images: 'contoso.azurecr.io/nodejssampleapp:${{ github.sha }}'
